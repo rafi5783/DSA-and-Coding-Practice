@@ -1,0 +1,40 @@
+class Node:
+    def __init__(self,x):
+        self.data=x
+        self.left=None
+        self.right=None
+    def insert(self):
+        if self.data ==None:
+            self.data = x
+            return
+        if self.data>x:
+            if self.left == None:
+                self.left = Node(x)
+            else:
+                self.left.insert(x)
+        else:
+            if self.right == None:
+                self.right = Node(x)
+            else:
+                self.right.insert(x)
+    def show(self):
+        if self.left:
+            self.left.show()
+        print(self.data,end=" ")
+        if self.right:
+            self.right.show()
+root = Node(33)
+while True:
+    print()
+    print("1.Insert\n.2.Show\n3.Exit")
+    ch = int(input("Enter your choice"))
+    if ch==1:
+        x = int(input("Enter element"))
+        root.insert(x)
+    elif ch==2:
+        root.show()
+    elif ch==3:
+        break
+    else:
+
+        print("Invalid Statement")
