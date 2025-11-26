@@ -1,0 +1,165 @@
+def addnode(v):
+    global nodecount
+    if v in nodes:
+        print(v,"is available")
+    else:
+        nodes.append(v)
+        nodecount=nodecount+1
+        for x in graph:
+            x.append(0)
+        temp=[]
+        for i in range(nodecount):
+            temp.append(0)
+        graph.append(temp)
+def addEdge(node1,node2):
+    if node1 not in nodes:
+        print("node1 not available")
+    elif node2 not in nodes:
+        print("node2 not available")
+    else:
+        i=nodes.index(node1)
+        j=nodes.index(node2)
+        graph[i][j]=1
+def delete(node):
+    global nodecount
+    if node not in nodes:
+        print("The entered node isn't available in the data")
+    else:
+        i = nodes.index(node)
+        nodes.pop(i)
+        graph.pop(i)
+        nodecount = nodecount - 1
+def show():
+    for i in range(nodecount):
+        for j in range(nodecount):
+            print(graph[i][j],end=" ")
+        print()
+nodecount=0
+nodes=[]
+graph=[]
+while True:
+    print()
+    print("1.add node\n2.add edge\n3.show\n4.Deletion\n5.Exit")
+    ch=int(input("Choice:"))
+    if ch==1:
+        x=input("Node: ")
+        addnode(x)
+    elif ch==2:
+        node1=input("Node1: ")
+        node2=input("Node2: ")
+        addEdge(node1,node2)
+    elif ch==3:
+        show()
+    elif ch==4:
+        node = input("Enter the node to be deleted")
+        delete(node)
+    else:
+        print("invalid choice")
+
+  1.add node
+2.add edge
+3.show
+4.Deletion
+5.Exit
+Choice:1
+Node: a
+
+1.add node
+2.add edge
+3.show
+4.Deletion
+5.Exit
+Choice:1
+Node: b
+
+1.add node
+2.add edge
+3.show
+4.Deletion
+5.Exit
+Choice:1
+Node: c
+
+1.add node
+2.add edge
+3.show
+4.Deletion
+5.Exit
+Choice:1
+Node: d
+
+1.add node
+2.add edge
+3.show
+4.Deletion
+5.Exit
+Choice:1
+Node: e
+
+1.add node
+2.add edge
+3.show
+4.Deletion
+5.Exit
+Choice:2
+Node1: a
+Node2: b
+
+1.add node
+2.add edge
+3.show
+4.Deletion
+5.Exit
+Choice:1
+Node: f
+
+1.add node
+2.add edge
+3.show
+4.Deletion
+5.Exit
+Choice:2
+Node1: c
+Node2: d
+
+1.add node
+2.add edge
+3.show
+4.Deletion
+5.Exit
+Choice:2
+Node1: e
+Node2: f
+
+1.add node
+2.add edge
+3.show
+4.Deletion
+5.Exit
+Choice:3
+0 1 0 0 0 0 
+0 0 0 0 0 0
+0 0 0 1 0 0
+0 0 0 0 0 0
+0 0 0 0 0 1
+0 0 0 0 0 0
+
+1.add node
+2.add edge
+3.show
+4.Deletion
+5.Exit
+Choice:4
+Enter the node to be deleteda
+
+1.add node
+2.add edge
+3.show
+4.Deletion
+5.Exit
+Choice:3
+0 0 0 0 0
+0 0 0 1 0
+0 0 0 0 0
+0 0 0 0 0
+0 0 0 0 0
